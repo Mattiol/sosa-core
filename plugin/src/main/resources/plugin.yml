@@ -1,0 +1,8 @@
+name: SosaCore
+version: ${version}
+main: it.mattiol.sosacore.plugin.SosaPlugin
+api-version: '1.21'
+authors:
+  - AyoMattiol
+softdepend:
+  - LuckPerms

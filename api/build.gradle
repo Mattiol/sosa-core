@@ -1,0 +1,10 @@
+plugins {
+    id "java-library"
+}
+
+dependencies {
+    compileOnlyApi "org.spigotmc:spigot-api:1.21.1-R0.1-SNAPSHOT"
+    compileOnlyApi "org.jetbrains:annotations:24.1.0"
+    compileOnlyApi("net.luckperms:api:5.5")
+    api "de.exlll:configlib-paper:4.8.1"
+}

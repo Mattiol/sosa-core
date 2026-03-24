@@ -1,0 +1,22 @@
+group = "it.mattiol"
+version = "1.0.0"
+
+subprojects {
+    apply plugin: 'java'
+
+    group = rootProject.group
+    version = rootProject.version
+
+    compileJava.options.encoding = 'UTF-8'
+
+    java {
+        sourceCompatibility = JavaVersion.VERSION_23
+        targetCompatibility = JavaVersion.VERSION_23
+    }
+
+    repositories {
+        mavenCentral()
+        maven { url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
+        maven { url 'https://repo.codemc.io/repository/maven-public/' }
+    }
+}
