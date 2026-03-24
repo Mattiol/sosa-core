@@ -8,11 +8,18 @@ import java.util.Map;
 public interface SosaConfig {
 
     long getCooldownMillis();
+
     double getCapsThreshold();
+
     List<String> getBlockedWords();
+
     String getChatFormat();
+
     String getPrefix();
+
     Map<String, String> getMessages();
+
     Location getSpawnLocation();
+
     void setSpawnLocation(Location location);
 }

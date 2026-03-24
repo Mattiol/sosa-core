@@ -7,14 +7,16 @@ import java.util.Map;
 
 public final class Utils {
 
-    private Utils() {}
+    private Utils() {
+    }
 
     public static String color(String message) {
         return ChatColor.translateAlternateColorCodes('&', message);
     }
 
     public static String replacePlaceholders(String message, Map<String, String> placeholders) {
-        for (Map.Entry<String, String> entry : placeholders.entrySet()) message = message.replace(entry.getKey(), entry.getValue());
+        for (Map.Entry<String, String> entry : placeholders.entrySet())
+            message = message.replace(entry.getKey(), entry.getValue());
 
         return message;
     }

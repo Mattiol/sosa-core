@@ -6,7 +6,7 @@ public interface SentinelService {
 
     boolean checkMessage(Player player, String message);
 
-    void setChatEnabled(boolean enabled);
-
     boolean isChatEnabled();
+
+    void setChatEnabled(boolean enabled);
 }

@@ -3,8 +3,8 @@ package it.mattiol.sosacore.plugin.commands.manager;
 import it.mattiol.sosacore.plugin.SosaPlugin;
 import it.mattiol.sosacore.plugin.commands.GamemodeCommands;
 import it.mattiol.sosacore.plugin.commands.MainCommand;
-import revxrsal.commands.bukkit.BukkitLamp;
 import revxrsal.commands.Lamp;
+import revxrsal.commands.bukkit.BukkitLamp;
 import revxrsal.commands.bukkit.actor.BukkitCommandActor;
 
 public class CommandManager {

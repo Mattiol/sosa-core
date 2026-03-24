@@ -31,8 +31,8 @@ public class SosaPlugin extends JavaPlugin implements SosaAPI {
                 configManager.get().getPrefix()
         );
 
-        this.players  = new PlayerServiceImpl();
-        this.spawn    = new SpawnServiceImpl();
+        this.players = new PlayerServiceImpl();
+        this.spawn = new SpawnServiceImpl();
 
         this.sentinel = new SentinelServiceImpl(
                 configManager.get().getBlockedWords(),
@@ -78,11 +78,30 @@ public class SosaPlugin extends JavaPlugin implements SosaAPI {
         return provider != null ? provider.getProvider() : null;
     }
 
-    @Override public PlayerService players()   { return players; }
-    @Override public MessageService messages()  { return messages; }
-    @Override public SpawnService spawn()       { return spawn; }
-    @Override public SentinelService sentinel() { return sentinel; }
-    @Override public ChatService chat()         { return chat; }
+    @Override
+    public PlayerService players() {
+        return players;
+    }
+
+    @Override
+    public MessageService messages() {
+        return messages;
+    }
+
+    @Override
+    public SpawnService spawn() {
+        return spawn;
+    }
+
+    @Override
+    public SentinelService sentinel() {
+        return sentinel;
+    }
+
+    @Override
+    public ChatService chat() {
+        return chat;
+    }
 
     public ConfigManager getConfigManager() {
         return configManager;

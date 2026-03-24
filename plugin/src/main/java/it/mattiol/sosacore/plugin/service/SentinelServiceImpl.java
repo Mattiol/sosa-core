@@ -60,13 +60,13 @@ public class SentinelServiceImpl implements SentinelService {
     }
 
     @Override
-    public void setChatEnabled(boolean enabled) {
-        this.chatEnabled = enabled;
+    public boolean isChatEnabled() {
+        return chatEnabled;
     }
 
     @Override
-    public boolean isChatEnabled() {
-        return chatEnabled;
+    public void setChatEnabled(boolean enabled) {
+        this.chatEnabled = enabled;
     }
 
     private boolean isOnCooldown(Player player) {

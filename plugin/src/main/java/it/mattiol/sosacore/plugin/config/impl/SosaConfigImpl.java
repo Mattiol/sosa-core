@@ -31,46 +31,48 @@ public class SosaConfigImpl implements SosaConfig {
     @Comment("Plugin messages")
     private Map<String, String> messages = new HashMap<>(Map.of(
             "sentinel.chat-disabled", "%prefix% &cLa chat è disabilitata.",
-            "sentinel.cooldown",      "%prefix% &cStai scrivendo troppo velocemente.",
-            "sentinel.blocked-word",  "%prefix% &cMessaggio non consentito.",
-            "sentinel.caps",          "%prefix% &cNon usare tutte lettere maiuscole.",
-            "core.reload",            "%prefix% &aPlugin ricaricato.",
-            "gamemode.creative",   "%prefix% &7ɢᴀᴍᴇᴍᴏᴅᴇ sᴇᴛ ᴛᴏ &bᴄʀᴇᴀᴛɪᴠᴇ&7.",
-            "gamemode.survival",   "%prefix% &7ɢᴀᴍᴇᴍᴏᴅᴇ sᴇᴛ ᴛᴏ &aꜱᴜʀᴠɪᴠᴀʟ&7.",
-            "gamemode.adventure",  "%prefix% &7ɢᴀᴍᴇᴍᴏᴅᴇ sᴇᴛ ᴛᴏ &6ᴀᴅᴠᴇɴᴛᴜʀᴇ&7.",
-            "gamemode.spectator",  "%prefix% &7ɢᴀᴍᴇᴍᴏᴅᴇ sᴇᴛ ᴛᴏ &8sᴘᴇᴄᴛᴀᴛᴏʀ&7."
+            "sentinel.cooldown", "%prefix% &cStai scrivendo troppo velocemente.",
+            "sentinel.blocked-word", "%prefix% &cMessaggio non consentito.",
+            "sentinel.caps", "%prefix% &cNon usare tutte lettere maiuscole.",
+            "core.reload", "%prefix% &aPlugin ricaricato.",
+            "gamemode.creative", "%prefix% &7ɢᴀᴍᴇᴍᴏᴅᴇ sᴇᴛ ᴛᴏ &bᴄʀᴇᴀᴛɪᴠᴇ&7.",
+            "gamemode.survival", "%prefix% &7ɢᴀᴍᴇᴍᴏᴅᴇ sᴇᴛ ᴛᴏ &aꜱᴜʀᴠɪᴠᴀʟ&7.",
+            "gamemode.adventure", "%prefix% &7ɢᴀᴍᴇᴍᴏᴅᴇ sᴇᴛ ᴛᴏ &6ᴀᴅᴠᴇɴᴛᴜʀᴇ&7.",
+            "gamemode.spectator", "%prefix% &7ɢᴀᴍᴇᴍᴏᴅᴇ sᴇᴛ ᴛᴏ &8sᴘᴇᴄᴛᴀᴛᴏʀ&7."
     ));
 
     @Comment("Spawn location")
     private SpawnLocation spawn = new SpawnLocation();
 
-    @Configuration
-    public static final class SpawnLocation {
-        private String world = "world";
-        private double x     = 0.0;
-        private double y     = 64.0;
-        private double z     = 0.0;
-        private float yaw    = 0.0f;
-        private float pitch  = 0.0f;
+    @Override
+    public String getPrefix() {
+        return prefix;
     }
 
     @Override
-    public String getPrefix() { return prefix; }
+    public long getCooldownMillis() {
+        return cooldownMillis;
+    }
 
     @Override
-    public long getCooldownMillis() { return cooldownMillis; }
+    public double getCapsThreshold() {
+        return capsThreshold;
+    }
 
     @Override
-    public double getCapsThreshold() { return capsThreshold; }
+    public List<String> getBlockedWords() {
+        return blockedWords;
+    }
 
     @Override
-    public List<String> getBlockedWords() { return blockedWords; }
+    public String getChatFormat() {
+        return chatFormat;
+    }
 
     @Override
-    public String getChatFormat() { return chatFormat; }
-
-    @Override
-    public Map<String, String> getMessages() { return messages; }
+    public Map<String, String> getMessages() {
+        return messages;
+    }
 
     @Override
     public Location getSpawnLocation() {
@@ -85,10 +87,20 @@ public class SosaConfigImpl implements SosaConfig {
         if (location == null || location.getWorld() == null) return;
         this.spawn = new SpawnLocation();
         this.spawn.world = location.getWorld().getName();
-        this.spawn.x     = location.getX();
-        this.spawn.y     = location.getY();
-        this.spawn.z     = location.getZ();
-        this.spawn.yaw   = location.getYaw();
+        this.spawn.x = location.getX();
+        this.spawn.y = location.getY();
+        this.spawn.z = location.getZ();
+        this.spawn.yaw = location.getYaw();
         this.spawn.pitch = location.getPitch();
+    }
+
+    @Configuration
+    public static final class SpawnLocation {
+        private String world = "world";
+        private double x = 0.0;
+        private double y = 64.0;
+        private double z = 0.0;
+        private float yaw = 0.0f;
+        private float pitch = 0.0f;
     }
 }

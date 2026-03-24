@@ -23,7 +23,7 @@ public class ChatListener implements Listener {
             return;
         }
 
-        if(plugin.chat() == null) return;;
+        if (plugin.chat() == null) return;
 
         String formatted = plugin.chat().formatMessage(event.getPlayer(), message);
         if (formatted == null) {

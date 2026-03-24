@@ -3,8 +3,8 @@ package it.mattiol.sosacore.plugin.service;
 import it.mattiol.sosacore.api.service.ChatService;
 import it.mattiol.sosacore.api.utils.Utils;
 import net.luckperms.api.LuckPerms;
-import net.luckperms.api.model.user.User;
 import net.luckperms.api.cacheddata.CachedMetaData;
+import net.luckperms.api.model.user.User;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
