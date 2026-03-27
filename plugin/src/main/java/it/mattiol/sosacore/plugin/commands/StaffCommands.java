@@ -28,4 +28,17 @@ public class StaffCommands {
         plugin.messages().send(player, "freeze.success-unfrozen");
         plugin.messages().send(target, "freeze.unfrozen");
     }
+
+    @Command("lockchat")
+    @CommandPermission("sosa.core.permissions.lockchat")
+    public void onLockChat(Player player) {
+
+        if(!plugin.sentinel().isChatEnabled()) {
+            plugin.sentinel().setChatEnabled(true);
+            plugin.messages().send(player, "sentinel.lockchat-disabled");
+        } else {
+            plugin.sentinel().setChatEnabled(false);
+            plugin.messages().send(player, "sentinel.lockchat-enabled");
+        }
+    }
 }

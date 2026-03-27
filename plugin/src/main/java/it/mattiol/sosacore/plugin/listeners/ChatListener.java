@@ -18,6 +18,11 @@ public class ChatListener implements Listener {
     public void onChat(AsyncPlayerChatEvent event) {
         String message = event.getMessage().trim();
 
+        if(!plugin.sentinel().isChatEnabled()) {
+            event.setCancelled(true);
+            return;
+        }
+
         if (!plugin.sentinel().checkMessage(event.getPlayer(), message)) {
             event.setCancelled(true);
             return;
