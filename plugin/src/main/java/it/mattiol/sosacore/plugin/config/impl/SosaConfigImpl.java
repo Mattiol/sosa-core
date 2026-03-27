@@ -30,10 +30,14 @@ public class SosaConfigImpl implements SosaConfig {
 
     private Map<String, String> messages = new HashMap<>(Map.ofEntries(
             Map.entry("sentinel.chat-disabled", "%prefix% &cLa chat è disabilitata."),
+            Map.entry("sentinel.lockchat-disabled", "%prefix% &cla chat è stata riabilitata."),
+            Map.entry("sentinel.lockchat-enabled", "%prefix% &cla chat è stata disabilitata."),
             Map.entry("sentinel.cooldown", "%prefix% &cStai scrivendo troppo velocemente."),
             Map.entry("sentinel.blocked-word", "%prefix% &cMessaggio non consentito."),
             Map.entry("sentinel.caps", "%prefix% &cNon usare tutte lettere maiuscole."),
             Map.entry("core.reload", "%prefix% &aPlugin ricaricato."),
+            Map.entry("core.setspawn", "%prefix% &aHai impostato correttamente il punto di spawn."),
+            Map.entry("core.spawn", "%prefix% &aTi sei teletrasportato allo spawn."),
             Map.entry("gamemode.creative", "%prefix% &7ɢᴀᴍᴇᴍᴏᴅᴇ sᴇᴛ ᴛᴏ &bᴄʀᴇᴀᴛɪᴠᴇ&7."),
             Map.entry("gamemode.survival", "%prefix% &7ɢᴀᴍᴇᴍᴏᴅᴇ sᴇᴛ ᴛᴏ &aꜱᴜʀᴠɪᴠᴀʟ&7."),
             Map.entry("gamemode.adventure", "%prefix% &7ɢᴀᴍᴇᴍᴏᴅᴇ sᴇᴛ ᴛᴏ &6ᴀᴅᴠᴇɴᴛᴜʀᴇ&7."),
