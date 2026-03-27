@@ -3,6 +3,7 @@ package it.mattiol.sosacore.plugin.commands.manager;
 import it.mattiol.sosacore.plugin.SosaPlugin;
 import it.mattiol.sosacore.plugin.commands.GamemodeCommands;
 import it.mattiol.sosacore.plugin.commands.MainCommand;
+import it.mattiol.sosacore.plugin.commands.StaffCommands;
 import revxrsal.commands.Lamp;
 import revxrsal.commands.bukkit.BukkitLamp;
 import revxrsal.commands.bukkit.actor.BukkitCommandActor;
@@ -24,5 +25,6 @@ public class CommandManager {
     private void register() {
         lamp.register(new MainCommand(plugin));
         lamp.register(new GamemodeCommands(plugin));
+        lamp.register(new StaffCommands(plugin));
     }
 }

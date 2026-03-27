@@ -28,18 +28,21 @@ public class SosaConfigImpl implements SosaConfig {
     @Comment("Chat format. Supports %prefix%, %player%, %suffix%, %message%")
     private String chatFormat = "%prefix%%player%%suffix%&r: %message%";
 
-    @Comment("Plugin messages")
-    private Map<String, String> messages = new HashMap<>(Map.of(
-            "sentinel.chat-disabled", "%prefix% &cLa chat è disabilitata.",
-            "sentinel.cooldown", "%prefix% &cStai scrivendo troppo velocemente.",
-            "sentinel.blocked-word", "%prefix% &cMessaggio non consentito.",
-            "sentinel.caps", "%prefix% &cNon usare tutte lettere maiuscole.",
-            "core.reload", "%prefix% &aPlugin ricaricato.",
-            "gamemode.creative", "%prefix% &7ɢᴀᴍᴇᴍᴏᴅᴇ sᴇᴛ ᴛᴏ &bᴄʀᴇᴀᴛɪᴠᴇ&7.",
-            "gamemode.survival", "%prefix% &7ɢᴀᴍᴇᴍᴏᴅᴇ sᴇᴛ ᴛᴏ &aꜱᴜʀᴠɪᴠᴀʟ&7.",
-            "gamemode.adventure", "%prefix% &7ɢᴀᴍᴇᴍᴏᴅᴇ sᴇᴛ ᴛᴏ &6ᴀᴅᴠᴇɴᴛᴜʀᴇ&7.",
-            "gamemode.spectator", "%prefix% &7ɢᴀᴍᴇᴍᴏᴅᴇ sᴇᴛ ᴛᴏ &8sᴘᴇᴄᴛᴀᴛᴏʀ&7."
-    ));
+    private Map<String, String> messages = new HashMap<>(Map.ofEntries(
+            Map.entry("sentinel.chat-disabled", "%prefix% &cLa chat è disabilitata."),
+            Map.entry("sentinel.cooldown", "%prefix% &cStai scrivendo troppo velocemente."),
+            Map.entry("sentinel.blocked-word", "%prefix% &cMessaggio non consentito."),
+            Map.entry("sentinel.caps", "%prefix% &cNon usare tutte lettere maiuscole."),
+            Map.entry("core.reload", "%prefix% &aPlugin ricaricato."),
+            Map.entry("gamemode.creative", "%prefix% &7ɢᴀᴍᴇᴍᴏᴅᴇ sᴇᴛ ᴛᴏ &bᴄʀᴇᴀᴛɪᴠᴇ&7."),
+            Map.entry("gamemode.survival", "%prefix% &7ɢᴀᴍᴇᴍᴏᴅᴇ sᴇᴛ ᴛᴏ &aꜱᴜʀᴠɪᴠᴀʟ&7."),
+            Map.entry("gamemode.adventure", "%prefix% &7ɢᴀᴍᴇᴍᴏᴅᴇ sᴇᴛ ᴛᴏ &6ᴀᴅᴠᴇɴᴛᴜʀᴇ&7."),
+            Map.entry("gamemode.spectator", "%prefix% &7ɢᴀᴍᴇᴍᴏᴅᴇ sᴇᴛ ᴛᴏ &8sᴘᴇᴄᴛᴀᴛᴏʀ&7."),
+            Map.entry("freeze.success", "%prefix% &aHai freezato il player %player%"),
+            Map.entry("freeze.frozen", "%prefix% &cSei stato freezato da %player%"),
+            Map.entry("freeze.success-unfrozen", "%prefix% &aHai unfreezato il player %player%"),
+            Map.entry("freeze.unfrozen", "%prefix% &cSei stato unfreezato da %player%")
+            ));
 
     @Comment("Spawn location")
     private SpawnLocation spawn = new SpawnLocation();

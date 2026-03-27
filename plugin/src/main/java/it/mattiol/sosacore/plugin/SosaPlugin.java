@@ -5,6 +5,7 @@ import it.mattiol.sosacore.api.service.*;
 import it.mattiol.sosacore.plugin.commands.manager.CommandManager;
 import it.mattiol.sosacore.plugin.config.ConfigManager;
 import it.mattiol.sosacore.plugin.listeners.ChatListener;
+import it.mattiol.sosacore.plugin.listeners.MoveListener;
 import it.mattiol.sosacore.plugin.service.*;
 import net.luckperms.api.LuckPerms;
 import org.bukkit.plugin.RegisteredServiceProvider;
@@ -47,7 +48,10 @@ public class SosaPlugin extends JavaPlugin implements SosaAPI {
 
         if (configManager.get().getSpawnLocation() != null) spawn.set(configManager.get().getSpawnLocation());
 
-        getServer().getPluginManager().registerEvents(new ChatListener(this), this);
+        List.of(
+                new ChatListener(this),
+                new MoveListener(this)
+        ).forEach(listener -> getServer().getPluginManager().registerEvents(listener, this));
 
         new CommandManager(this);
 
