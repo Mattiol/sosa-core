@@ -2,6 +2,9 @@ package it.mattiol.sosacore.plugin.commands;
 
 import it.mattiol.sosacore.api.utils.Utils;
 import it.mattiol.sosacore.plugin.SosaPlugin;
+import net.kyori.adventure.audience.Audience;
+import net.kyori.adventure.text.minimessage.MiniMessage;
+import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import revxrsal.commands.annotation.Command;
 import revxrsal.commands.annotation.Subcommand;
@@ -38,4 +41,19 @@ public class MainCommand {
         plugin.getConfigManager().reload();
         plugin.messages().send(player, "core.reload");
     }
+
+    @Subcommand("setspawn")
+    @CommandPermission("sosa.core.permissions.setspawn")
+    public void onSetSpawn(Player player) {
+        Location location = player.getLocation();
+
+        plugin.spawn().set(location);
+        plugin.messages().send(player, "core.setspawn");
+    }
+
+    @Subcommand("uptime")
+    public void onUptime(Player player) {
+        plugin.uptime();
+    }
+
 }
