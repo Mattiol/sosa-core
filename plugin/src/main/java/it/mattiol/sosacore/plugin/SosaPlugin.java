@@ -23,8 +23,11 @@ public class SosaPlugin extends JavaPlugin implements SosaAPI {
     private SentinelServiceImpl sentinel;
     private ChatServiceImpl chat;
 
+    private long startTime;
+
     @Override
     public void onEnable() {
+        this.startTime = System.currentTimeMillis();
         this.configManager = new ConfigManager(this);
 
         this.messages = new MessageServiceImpl(
@@ -109,5 +112,9 @@ public class SosaPlugin extends JavaPlugin implements SosaAPI {
 
     public ConfigManager getConfigManager() {
         return configManager;
+    }
+
+    public long uptime() {
+        return (System.currentTimeMillis() - startTime) / 1000;
     }
 }
